@@ -34,3 +34,4 @@ for i, c in enumerate(s):
 print(">>> Chop in bytes and convert to chars")
 sol = "".join(chr(int(t[i:i+8], 2)) for i in range(0, len(t), 8))
 print(sol)
+

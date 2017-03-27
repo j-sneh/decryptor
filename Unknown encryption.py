@@ -2,11 +2,14 @@ from math import ceil, log
 
 s = "1000100101010101100100101001000111000001010010"
 LENS = len(s)
-MAXP = ceil(log(LENS)/log(2))
-print len(s)
-print(">>> Error checking...")
+twolog = log(2)
+loglens = log(LENS)
+MAXP = ceil(loglens/twolog)
+print MAXP
+if MAXP != 6:
+    print 'code error'
 flipbit = -1
-for p in range(MAXP):
+for p in range(int(MAXP)):
     skip = 2**p
     start = skip - 1
     ones = 0
@@ -31,4 +34,3 @@ for i, c in enumerate(s):
 print(">>> Chop in bytes and convert to chars")
 sol = "".join(chr(int(t[i:i+8], 2)) for i in range(0, len(t), 8))
 print(sol)
-
